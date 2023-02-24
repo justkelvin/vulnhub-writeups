@@ -1,0 +1,12 @@
+# Dirsearch started Mon May  2 13:37:52 2022 as: /usr/share/dirsearch/dirsearch.py -u http://192.168.56.118/site/ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -o jangow.dir
+
+200    10KB  http://192.168.56.118:80/site/index.html
+200    10KB  http://192.168.56.118:80/site/.
+403   279B   http://192.168.56.118:80/site/.html
+403   279B   http://192.168.56.118:80/site/.php
+403   279B   http://192.168.56.118:80/site/.htm
+403   279B   http://192.168.56.118:80/site/.htpasswds
+403   279B   http://192.168.56.118:80/site/wp-forum.phps
+403   279B   http://192.168.56.118:80/site/.htuser
+403   279B   http://192.168.56.118:80/site/.htc
+403   279B   http://192.168.56.118:80/site/.ht

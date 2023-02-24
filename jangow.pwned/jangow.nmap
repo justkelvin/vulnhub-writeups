@@ -1,0 +1,22 @@
+# Nmap 7.92 scan initiated Mon May  2 13:12:15 2022 as: nmap -vvv -Pn -sCV -p 0-65535 --reason -oN jangow.nmap 192.168.56.118
+mass_dns: warning: Unable to determine any DNS servers. Reverse DNS is disabled. Try using --system-dns or specify valid servers with --dns-servers
+Nmap scan report for 192.168.56.118
+Host is up, received user-set (0.0018s latency).
+Scanned at 2022-05-02 13:12:16 EAT for 114s
+Not shown: 65534 filtered tcp ports (no-response)
+PORT   STATE SERVICE REASON  VERSION
+21/tcp open  ftp     syn-ack vsftpd 3.0.3
+80/tcp open  http    syn-ack Apache httpd 2.4.18
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Index of /
+| http-ls: Volume /
+| SIZE  TIME              FILENAME
+| -     2021-06-10 18:05  site/
+|_
+| http-methods: 
+|_  Supported Methods: OPTIONS GET HEAD POST
+Service Info: Host: 127.0.0.1; OS: Unix
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon May  2 13:14:10 2022 -- 1 IP address (1 host up) scanned in 114.38 seconds

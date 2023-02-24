@@ -1,0 +1,15 @@
+# Dirsearch started Sun Jun 26 15:04:24 2022 as: /usr/share/dirsearch/dirsearch.py -u http://192.168.56.104/ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-files.txt -o kali.dir
+
+200     1KB  http://192.168.56.104:80/profile.php
+200     2KB  http://192.168.56.104:80/index.html
+200   293B   http://192.168.56.104:80/style.css
+200     2KB  http://192.168.56.104:80/.
+403   279B   http://192.168.56.104:80/.html
+403   279B   http://192.168.56.104:80/.php
+403   279B   http://192.168.56.104:80/.htm
+403   279B   http://192.168.56.104:80/.htpasswds
+200     0B   http://192.168.56.104:80/javascript.js
+403   279B   http://192.168.56.104:80/wp-forum.phps
+403   279B   http://192.168.56.104:80/.htuser
+403   279B   http://192.168.56.104:80/.ht
+403   279B   http://192.168.56.104:80/.htc

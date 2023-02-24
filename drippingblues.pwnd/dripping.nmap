@@ -1,0 +1,43 @@
+# Nmap 7.92 scan initiated Sat May  7 16:06:28 2022 as: nmap -vvv -Pn -sCV -p 0-65535 --reason -oN dripping.nmap -T5 192.168.56.103
+mass_dns: warning: Unable to determine any DNS servers. Reverse DNS is disabled. Try using --system-dns or specify valid servers with --dns-servers
+Nmap scan report for 192.168.56.103
+Host is up, received user-set (0.0033s latency).
+Scanned at 2022-05-07 16:06:28 EAT for 11s
+Not shown: 65533 closed tcp ports (conn-refused)
+PORT   STATE SERVICE REASON  VERSION
+21/tcp open  ftp     syn-ack vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_-rwxrwxrwx    1 0        0             471 Sep 19  2021 respectmydrip.zip [NSE: writeable]
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to ::ffff:192.168.56.1
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 4
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+22/tcp open  ssh     syn-ack OpenSSH 8.2p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 9e:bb:af:6f:7d:a7:9d:65:a1:b1:a1:be:91:cd:04:28 (RSA)
+| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDbxYxQnBJ9rm2bVc4pAXQ3GpeYAIZleaeEqWNA81n2LKLoQj4itDteNsWVGyl+/MLD6cLhH2pG/Do+fyCB0BiYPChOCG1TbIZAD+xyoIwpWaKgGsYboiFRXDZGKSL1tNVU75dXQ15h9mk439nP6/wU/VtQI5DzepZwEm2UptuM47s5SjUThz12oxLiVJEOlpWBvQXqOgE19FcPUiPTTyiLKNxYf3ldsfO2+qqN9huJJaxUWyJIybQL4bI6yEh4IPnvKdfQjFptN3IEPL+bvk72NNNaYlQ/WwX2RpOcRd3Fjwr+iw2k+B8CT7usMylurEfWB6KGCrw6069Xo28/cjVPdbhIlRviJcs8RbXriykLdPY82r1RkaqZj1dW4kBNZNRiZSrFw6ZiorP7Eg56K4kRTzgk9yJo8o9BmTsYkh03DYKiWEHcNQGvmMZ2kCbiEeCyQe9kOsSLBU72qZD9rE2LLf8mTAHQt9ZOzB6uIqL+VIwoFZ7n0T+7oavPfv7k4r0=
+|   256 a3:d3:c0:b4:c5:f9:c0:6c:e5:47:64:fe:91:c5:cd:c0 (ECDSA)
+| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDF04+r2o37rJylEzUuHRQoRjOdCMM3gWNlZ2lyYMEp5n0O5Z/5BarHCUCOhFR2MxnQ9CZzfpEYweDjqXwlFeZc=
+|   256 4c:84:da:5a:ff:04:b9:b5:5c:5a:be:21:b6:0e:45:73 (ED25519)
+|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH0x+9idurkyzJIrzQLE/+qOMwrGuXdg/5rBaw8WAqWl
+80/tcp open  http    syn-ack Apache httpd 2.4.41 ((Ubuntu))
+| http-robots.txt: 2 disallowed entries 
+|_/dripisreal.txt /etc/dripispowerful.html
+|_http-title: Site doesn't have a title (text/html; charset=UTF-8).
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat May  7 16:06:39 2022 -- 1 IP address (1 host up) scanned in 11.53 seconds

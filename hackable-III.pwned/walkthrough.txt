@@ -1,0 +1,49 @@
+Hackable III
+
+Nmap scan showed only port 80 open
+Also a robots.txt had /config path disallowed
+Dirsearch showed some folders also- /backups
+                                    /imagens
+                                    /css
+                                    /login_page
+View source of index.php showed a comment - a possible username and talked about port knocking
+    username - jubiscleudo
+    password
+
+A login page in /login_page/login.html  seemed to be vulnerable to something, sqli - entering ' or 1=1 showed
+the login.php source code
+In /config we had the sql connection config file which also showed that the mysql had root login with no password
+
+Something interesting about the login.php source code showed a redirect to 3.jpg image file which running steghide
+with no password extracted a file
+    1. porta:65535
+    2. 10000
+    3. 4444
+    Maybe one of the numbers needed for port knocking.
+
+Keep enumeration we find a base64 string in http://192.168.56.103/config/1.txt and decoding gives us another number 10000
+Lets keep looking, a rare place in the css directory we had a 2.txt which had brainfuck
+    ++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>------------------....
+    Decoding it gave us 4444
+
+    knock 192.168.56.103 10000 4444 65535
+
+    nmap -p22 ip - and its now open
+
+So what next - in backups folder we found a wordlist - lets try it with hydra with the username in the source
+We managed to login-
+I found another user in the system - so i looked for a way to access
+Running LinPeas showed a /var/www/html/.backup_config.php and it seemed intersting
+Looking more in LinPeas we get:
+    define('DB_PASSWORD', 'TrOLLED_3');
+    define('DB_USERNAME', 'hackable_3');
+    define('DB_PASSWORD', '');
+    define('DB_USERNAME', 'root');
+Lets try the creds
+    user - hackable_3
+    pass - TrOLLED_3
+
+A lot of googling broght to me that lxd and lxc bnaries where there and the user hackable_3 was in the lxd group
+I followed a tutorial in hacktricks ablout lxd-privilege-escalation
+
+Got root finally... Not Bad
